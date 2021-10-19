@@ -98,11 +98,12 @@ while (flag):
 
 	resp = numpy.random.choice(response,p=[0.9,0.04,0.02,0.04])
 	byt = int(random.gauss(5000,50))
-	referer = faker.uri()
-	useragent = numpy.random.choice(ualist,p=[0.5,0.3,0.1,0.05,0.05] )()
+	#referer = faker.uri()
+	#useragent = numpy.random.choice(ualist,p=[0.5,0.3,0.1,0.05,0.05] )()
         print("Generating log...")
 	logger.debug("Generating log...")
-	f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (ip,dt,tz,vrb,uri,resp,byt,referer,useragent))
+	f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s\n' % (ip,dt,tz,vrb,uri,resp,byt))
+	#f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (ip,dt,tz,vrb,uri,resp,byt,referer,useragent))
 
 	log_lines = log_lines - 1
 	flag = False if log_lines == 0 else True
