@@ -101,7 +101,7 @@ while (flag):
 	#referer = faker.uri()
 	#useragent = numpy.random.choice(ualist,p=[0.5,0.3,0.1,0.05,0.05] )()
         print("Generating log...")
-	logger.debug("Generating log...")
+	logging.debug("Generating log...")
 	f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s\n' % (ip,dt,tz,vrb,uri,resp,byt))
 	#f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (ip,dt,tz,vrb,uri,resp,byt,referer,useragent))
 
