@@ -11,6 +11,7 @@ import argparse
 from faker import Faker
 from random import randrange
 from tzlocal import get_localzone
+import logging
 local = get_localzone()
 
 #todo:
@@ -37,6 +38,8 @@ class switch(object):
             return True
         else:
             return False
+
+logging.info('Starting...')
 
 parser = argparse.ArgumentParser(__file__, description="Fake Apache Log Generator")
 parser.add_argument("--output", "-o", dest='output_type', help="Write to a Log file, a gzip file or to STDOUT", choices=['LOG','GZ','CONSOLE'] )
@@ -98,6 +101,7 @@ while (flag):
 	referer = faker.uri()
 	useragent = numpy.random.choice(ualist,p=[0.5,0.3,0.1,0.05,0.05] )()
         print("Generating log...")
+	logger.debug("Generating log...")
 	f.write('%s - - [%s %s] "%s %s HTTP/1.0" %s %s "%s" "%s"\n' % (ip,dt,tz,vrb,uri,resp,byt,referer,useragent))
 
 	log_lines = log_lines - 1
