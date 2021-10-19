@@ -1,4 +1,4 @@
-# Fake Apache Log Generator
+# Apache Log Generator
 
 This script generates a boatload of fake apache logs very quickly. Its useful for generating fake workloads for [data ingest](http://github.com/streamsets/datacollector) and/or analytics applications.
 
@@ -12,37 +12,37 @@ It utilizes the excellent [Faker](https://github.com/joke2k/faker/) library to g
 
 Generate a single log line to STDOUT
 ```
-$ python apache-fake-log-gen.py  
+$ python apache-log-gen.py  
 ```
 
 Generate 100 log lines into a .log file
 ```
-$ python apache-fake-log-gen.py -n 100 -o LOG 
+$ python apache-log-gen.py -n 100 -o LOG 
 ```
 
 Generate 100 log lines into a .gz file
 ```
-$ python apache-fake-log-gen.py -n 100 -o GZ 
+$ python apache-log-gen.py -n 100 -o GZ 
 ```
 
 Infinite log file generation (useful for testing File Tail Readers)
 ```
-$ python apache-fake-log-gen.py -n 0 -o LOG 
+$ python apache-log-gen.py -n 0 -o LOG 
 ```
 
 Prefix the output filename 
 ```
-$ python apache-fake-log-gen.py -n 100 -o LOG -p WEB1
+$ python apache-log-gen.py -n 100 -o LOG -p WEB1
 ```
 
 
 Detailed help
 ```
-$ python apache-fake-log-gen.py -h
-usage: apache-fake-log-gen.py [-h] [--output {LOG,GZ,CONSOLE}]
+$ python apache-log-gen.py -h
+usage: apache-log-gen.py [-h] [--output {LOG,GZ,CONSOLE}]
                               [--num NUM_LINES] [--prefix FILE_PREFIX]
 
-Fake Apache Log Generator
+Apache Log Generator
 
 optional arguments:
   -h, --help            show this help message and exit
